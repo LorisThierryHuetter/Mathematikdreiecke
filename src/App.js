@@ -1,23 +1,20 @@
 import logo from './logo.svg';
+import Sinus from './Components/Sinus';
+import Cosinus from './Components/Cosinus';
+import Tangenz from './Components/Tangenz';
+import Pythagoras from './Components/Pythagoras';
+import Dreieckidentifizierung from './Components/Dreieckidentifizierung';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <p>Test</p>
+        <Sinus/>
+        <Cosinus/>
+        <Tangenz/>
+        <Pythagoras/>
+        <Dreieckidentifizierung/>
       </header>
     </div>
   );
