@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './bbw.svg';
 import Sinus from './Components/Sinus';
 import Cosinus from './Components/Cosinus';
 import Tangenz from './Components/Tangenz';
@@ -10,11 +10,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <img src={logo} className="App-logo" alt="bbw-logo" />
+        <Dreieckidentifizierung/>
+        <Pythagoras/>
         <Sinus/>
         <Cosinus/>
         <Tangenz/>
-        <Pythagoras/>
-        <Dreieckidentifizierung/>
       </header>
     </div>
   );
