@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./component.css"
 
+
+
 function Dreieckidentifizierung() {
 
   const [result, setResult] = useState("None");
   const [results, setResults] = useState([]);
+  const [reset, setReset] = useState(0);
 
   let sides = 0
   let angles = 0
@@ -15,6 +18,23 @@ function Dreieckidentifizierung() {
   let angleA = 0  // combi value: 1
   let angleB = 0  // combi value: 2
   let angleC = 0  // combi value: 4
+
+  useEffect(() => {
+    Inputs();
+  }, [reset]);
+
+  function Inputs() {
+    return(
+      <div id="input">
+          <p id="#sideA">Side A<input type="number" onChange={ (e) => { sideA = parseFloat(e.target.value) } } /></p>
+          <p id="#sideB">Side B<input type="number" onChange={ (e) => { sideB = parseFloat(e.target.value) } } /></p>
+          <p id="#sideC">Side C<input type="number" onChange={ (e) => { sideC = parseFloat(e.target.value) } } /></p>
+          <p id="#angleA">Angle A<input type="number" onChange={ (e) => { angleA = parseFloat(e.target.value) } } /></p>
+          <p id="#angleB">Angle B<input type="number" onChange={ (e) => { angleB = parseFloat(e.target.value) } } /></p>
+          <p id="#angleC">Angle C<input type="number" onChange={ (e) => { angleC = parseFloat(e.target.value) } } /></p>
+        </div>
+    );
+  }
 
   function triangleCalc(){
     if(sideA!==0){
@@ -56,7 +76,10 @@ function Dreieckidentifizierung() {
     }
   }
 
-    
+  function resetter(){
+    setReset(reset + 1)
+    console.log(reset)
+  }
 
 
   function angleCalc(){
@@ -88,15 +111,9 @@ function Dreieckidentifizierung() {
   return (
     <div>
       <p>Dreieckidentifizierung</p>
-      <div id="input">
-        <p id="#sideA">Side A<input type="number" onChange={ (e) => { sideA = parseFloat(e.target.value) } } /></p>
-        <p id="#sideB">Side B<input type="number" onChange={ (e) => { sideB = parseFloat(e.target.value) } } /></p>
-        <p id="#sideC">Side C<input type="number" onChange={ (e) => { sideC = parseFloat(e.target.value) } } /></p>
-        <p id="#angleA">Angle A<input type="number" onChange={ (e) => { angleA = parseFloat(e.target.value) } } /></p>
-        <p id="#angleB">Angle B<input type="number" onChange={ (e) => { angleB = parseFloat(e.target.value) } } /></p>
-        <p id="#angleC">Angle C<input type="number" onChange={ (e) => { angleC = parseFloat(e.target.value) } } /></p>
-      </div>
+      <Inputs />
       <button id="calculate" onClick={ triangleCalc}>Calculate</button>
+      <button id="reset" onClick={ resetter }>Reset</button>
       <div>
         <h3>Results:</h3>
         <div>

@@ -35,6 +35,28 @@
     transform: translateY(4px);
 }
 
+#reset {
+    margin-left: 2rem;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #c01d00;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px rgb(82, 82, 82);
+}
+
+#reset:hover { background-color: #921701; }
+
+#reset:active {
+    background-color: #921701;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
 #sideA {
     color: unset;
     color: red;
